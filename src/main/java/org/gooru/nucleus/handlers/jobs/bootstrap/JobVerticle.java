@@ -27,6 +27,7 @@ public class JobVerticle extends AbstractVerticle {
 
     vertx.executeBlocking(blockingFuture -> {
       startApplication();
+      blockingFuture.complete();
     }, future -> {
       if (future.succeeded()) {
         voidFuture.complete();
